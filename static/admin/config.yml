@@ -12,7 +12,7 @@ backend:
     uploadMedia: Upload “{{path}}”
     deleteMedia: Delete “{{path}}”
 
-publish_mode: editorial_workflow
+#publish_mode: editorial_workflow
 
 # Uploads folder on the repo:
 media_folder: "static/uploads"
