@@ -1,5 +1,5 @@
 ---
-name: Control Environment Narrative
+name: Control Environment Narrativess
 acronym: CEN
 satisfies:
   TSC 2017:
@@ -12,8 +12,8 @@ satisfies:
     - CC5.2
     - CC5.3
 majorRevisions:
-  - date: Jun 1 2018
-    comment: Initial document
+  - comment: Initial document
+    date: Jun 1 2018
 ---
 
 # Control Environment Narrative
