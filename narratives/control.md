@@ -1,5 +1,5 @@
 ---
-name: Control Environment Narrativess
+name: Control Environment Narra
 acronym: CEN
 satisfies:
   TSC 2017:
