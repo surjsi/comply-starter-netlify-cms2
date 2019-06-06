@@ -5,4 +5,4 @@ tickets:
   github:
     repo: comply-starter-netlify-cms # TODO: change this!
     token: "$GITHUB_TOKEN"
-    username: ridem # TODO: change this!
+    username: surjsi # TODO: change this!
