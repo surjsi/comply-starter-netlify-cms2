@@ -258,6 +258,17 @@ html lang=en
           p data-last-edit-date=
         .has-text-centered data-netlify-identity-menu=""
   = javascript
+    
+    if (netlifyIdentity) {
+      netlifyIdentity.on("init", () => {
+        netlifyIdentity.on("logout", () => {
+          document.location.href = "/login"
+        })
+      })
+      netlifyIdentity.init({
+        logo: false
+      });
+    }
     if (window.location.hash == "") {
       show('overview')
     } else {
@@ -268,15 +279,5 @@ html lang=en
           show(destination)
         }
       }
-    }
-    if (netlifyIdentity) {
-      netlifyIdentity.on("init", () => {
-        netlifyIdentity.on("logout", () => {
-          document.location.href = "/login"
-        })
-      })
-      netlifyIdentity.init({
-        logo: false
-      });
     }
     
