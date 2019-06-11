@@ -260,15 +260,19 @@ html lang=en
   = javascript
     
     if (netlifyIdentity) {
-      netlifyIdentity.on("init", () => {
-        netlifyIdentity.on("logout", () => {
-          document.location.href = "/login"
-        })
+      netlifyIdentity.on("init", user => {
+        if (!user) {
+          netlifyIdentity.on("login", () => {
+            document.location.href = "/";
+          });
+        }
       })
       netlifyIdentity.init({
         logo: false
       });
     }
+    
+    
     if (window.location.hash == "") {
       show('overview')
     } else {
