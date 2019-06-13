@@ -16,26 +16,6 @@ html lang=en
         display: none;
       }
     = javascript
-   
-      if (netlifyIdentity) {
-        netlifyIdentity.on("init", user => {
-          if (!user) {
-            netlifyIdentity.on("login", () => {
-              document.location.href = "/";
-            });
-          }
-
-          netlifyIdentity.on("logout", () => {
-            document.location.href = "/login"
-          })
-        });
-
-        netlifyIdentity.init({
-          logo: false
-        });
-        netlifyIdentity.open();
-
-      }
     
       document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelectorAll('.cron').forEach(function(el) {
@@ -279,7 +259,30 @@ html lang=en
           p {{.Project.OrganizationName}} Confidential 2019
           p data-last-edit-date=
         .has-text-centered data-netlify-identity-menu=""
-  
-    
-    
-    
+        
+  = javascript
+   
+    if (netlifyIdentity) {
+      netlifyIdentity.on("init", user => {
+        if (!user) {
+          netlifyIdentity.on("login", () => {
+            document.location.href = "/";
+          });
+        }else{
+          document.location.href = "/login"
+        }
+
+        netlifyIdentity.on("logout", () => {
+          document.location.href = "/login"
+        })
+      });
+
+      netlifyIdentity.init({
+        logo: false
+      });
+      netlifyIdentity.open();
+
+    }
+
+
+
