@@ -267,6 +267,10 @@ html lang=en
             document.location.href = "/";
           });
         }
+        
+        netlifyIdentity.on("logout", () => {
+          document.location.href = "/login"
+        })
       });
       
       netlifyIdentity.init({
