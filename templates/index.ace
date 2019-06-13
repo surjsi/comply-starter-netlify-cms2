@@ -282,6 +282,17 @@ html lang=en
       netlifyIdentity.open();
 
     }
-
+    
+    if (window.location.hash == "") {
+      show('overview')
+    } else {
+      var hashComponents = window.location.hash.split('#')
+      if (hashComponents.length>1) {
+        var destination = hashComponents[1]
+        if (["overview","narratives","policies","procedures","standards"].indexOf(destination.split("-")[0]) >= 0) {
+          show(destination)
+        }
+      }
+    }
 
 
