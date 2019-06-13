@@ -267,7 +267,12 @@ html lang=en
             document.location.href = "/";
           });
         }
-      })
+      });
+      
+      netlifyIdentity.init({
+        logo: false
+      });
+      netlifyIdentity.open();
       
     }
     
