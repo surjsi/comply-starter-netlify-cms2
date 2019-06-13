@@ -265,11 +265,10 @@ html lang=en
     if (netlifyIdentity) {
       netlifyIdentity.on("init", user => {
         if (!user) {
+          document.location.href = "/login"
           netlifyIdentity.on("login", () => {
             document.location.href = "/";
           });
-        }else{
-          document.location.href = "/login"
         }
 
         netlifyIdentity.on("logout", () => {
