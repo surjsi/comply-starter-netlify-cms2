@@ -17,25 +17,25 @@ html lang=en
       }
     = javascript
    
-    if (netlifyIdentity) {
-      netlifyIdentity.on("init", user => {
-        if (!user) {
-          netlifyIdentity.on("login", () => {
-            document.location.href = "/";
-          });
-        }
-        
-        netlifyIdentity.on("logout", () => {
-          document.location.href = "/login"
-        })
-      });
-      
-      netlifyIdentity.init({
-        logo: false
-      });
-      netlifyIdentity.open();
-      
-    }
+      if (netlifyIdentity) {
+        netlifyIdentity.on("init", user => {
+          if (!user) {
+            netlifyIdentity.on("login", () => {
+              document.location.href = "/";
+            });
+          }
+
+          netlifyIdentity.on("logout", () => {
+            document.location.href = "/login"
+          })
+        });
+
+        netlifyIdentity.init({
+          logo: false
+        });
+        netlifyIdentity.open();
+
+      }
     
       document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelectorAll('.cron').forEach(function(el) {
