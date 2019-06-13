@@ -15,7 +15,7 @@
         if (!user) {
           netlifyIdentity.on("login", user => {
             setCookie(user)
-            if (user.app_metadata.roles.indexOf("editor") > -1) {
+            if (user.app_metadata && user.app_metadata.roles && user.app_metadata.roles.indexOf("editor") > -1) {
               document.location.href = "/admin/";
             } else {
               document.location.href = "/";
