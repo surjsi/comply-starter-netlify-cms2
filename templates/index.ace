@@ -16,7 +16,6 @@ html lang=en
         display: none;
       }
     = javascript
-    
       document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelectorAll('.cron').forEach(function(el) {
           var cronString = ("" + el.innerHTML).trim()
@@ -259,29 +258,19 @@ html lang=en
           p {{.Project.OrganizationName}} Confidential 2019
           p data-last-edit-date=
         .has-text-centered data-netlify-identity-menu=""
-        
   = javascript
-   
+    
     if (netlifyIdentity) {
       netlifyIdentity.on("init", user => {
         if (!user) {
-          document.location.href = "/login"
           netlifyIdentity.on("login", () => {
             document.location.href = "/";
           });
         }
-
-        netlifyIdentity.on("logout", () => {
-          document.location.href = "/login"
-        })
-      });
-
-      netlifyIdentity.init({
-        logo: false
-      });
-      netlifyIdentity.open();
-
+      })
+      
     }
+    
     
     if (window.location.hash == "") {
       show('overview')
@@ -294,5 +283,4 @@ html lang=en
         }
       }
     }
-
-
+    
